@@ -1,0 +1,20 @@
+{
+  "name": "webdevclub",
+  "version": "1.0.0",
+  "description": "Web Development Club",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Web Dev Club Members",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "ip": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "nodemon": "*",
+    "vash": "^0.12.4"
+  }
+}

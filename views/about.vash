@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<htmL>
+
+<head>
+    <title>Web Development Club | About</title>
+</head>
+
+<body>
+    <h1>Web Development Club</h1>
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="points.html">Points</a>
+    <a href="about.html">About</a>
+    <br>
+    <br>
+    <br>
+    <h3>About Page</h3>
+</body>
+
+</htmL>

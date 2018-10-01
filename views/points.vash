@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<htmL>
+
+<head>
+    <title>Web Development Club | Points</title>
+</head>
+
+<body>
+    <h1>Web Development Club</h1>
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="points.html">Points</a>
+    <a href="about.html">About</a>
+    <br>
+    <br>
+    <br>
+    <h3>Points</h3>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Points</td>
+        </tr>
+    
+        @model.points.forEach(function(data) {
+            <tr>
+                <td>@data.name</td>
+                <td>@data.points</td>
+            </tr>
+        })
+    
+
+    </table>
+</body>
+
+</htmL>

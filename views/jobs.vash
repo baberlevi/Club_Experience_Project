@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<htmL>
+
+<head>
+    <title>Web Development Club | Jobs</title>
+</head>
+
+<body>
+    <h1>Web Development Club</h1>
+    <a href="index.html">Home</a>
+    <a href="jobs.html">Jobs</a>
+    <a href="points.html">Points</a>
+    <a href="about.html">About</a>
+    <br>
+    <br>
+    <br>
+    <h3>Jobs</h3>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Points</td>
+            <td>Claimed By:</td>
+        </tr>
+    
+        @model.jobs.forEach(function(data) {
+            <tr>
+                <td>@data.name</td>
+                <td>@data.description</td>
+                <td>@data.points</td>
+                <td>@data.claimedBy</td>
+            </tr>
+        })
+    
+
+    </table>
+</body>
+
+</htmL>
