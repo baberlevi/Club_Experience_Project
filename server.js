@@ -5,7 +5,7 @@ const ip = require('ip');
 const routes = require('./controllers/routes.js');
 
 const server = http.createServer(app);
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 
 //view engine
 app.set('view engine', 'vash');
