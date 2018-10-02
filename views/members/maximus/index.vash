@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maxwell DeVos</title>
+    </head>
+    <body>
+        <h1>Web Development Club</h1>
+        <a href="../index.html">Home</a>
+        <a href="../members.html">Members</a>
+        <a href="../jobs.html">Jobs</a>
+        <a href="../points.html">Points</a>
+        <a href="../about.html">About</a>
+        <br>
+        <br>
+        <br>
+        <h3>Maxwell DeVos</h3>
+        <p>Welcome to my page!!</p>
+    </body>
+</html>
