@@ -16,6 +16,12 @@
     <br>
     <br>
     <h3>Jobs</h3>
+    <style>
+    table, tr, td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    </style>
     <table>
         <tr>
             <td>Name</td>

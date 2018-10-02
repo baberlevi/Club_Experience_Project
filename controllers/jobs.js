@@ -4,23 +4,18 @@ const jobModel = require("../models/jobModel.js");
 
 //job route
 router.get('/jobs.html', (req, res) => {
+  
+    jobModel.find({status: 1}, (err, data) => {
+        if (err) throw err;
+        
+        res.render("jobs", {jobs: data});
 
-    let jobs;
+    });
 
-    if(jobModel.count() > 0) {
-         jobs = jobModel.find();
-    }else{
-        jobs = [{
-            name: "Default Job",
-            description: "This is a default job because the db is empty",
-            status: 1,
-            points: 10,
-            claimedBy: "Default Jimmy"
-        }];
-    }
+});
 
-    res.render("jobs", {jobs: jobs});
-
+router.get('/newJob.html', (req, res) => {
+    res.render("newJob");
 });
 
 module.exports = router;

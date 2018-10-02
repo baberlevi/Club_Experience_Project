@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const ip = require('ip');
+const bodyParser = require('body-parser');
 const routes = require('./controllers/routes.js');
 
 const server = http.createServer(app);
@@ -12,6 +13,10 @@ app.set('view engine', 'vash');
 
 //middleware
 app.use(express.static('/public'));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+app.use(bodyParser.json());
 
 //set the routes for the server to use
 app.use('/', routes);

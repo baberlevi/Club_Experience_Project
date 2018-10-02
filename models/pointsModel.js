@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 //new user schema
 const pointsModel = new Schema({
-    username: {
+    name: {
         type: String,
         required: true
     },
