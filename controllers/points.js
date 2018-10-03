@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Points = require("../models/pointsModel.js");
 
-//points route
+//points list
 router.get('/points.html', (req, res) => {
     
     Points.find((err,data) => {
@@ -13,6 +13,7 @@ router.get('/points.html', (req, res) => {
 
 });
 
+//add points   <-- should be removed technically later
 router.get('/getPoints.html', (req,res) => {
 
     res.render("getPoints");

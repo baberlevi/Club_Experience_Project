@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const maximus = require("./maximus.js");
+//add your pages route here
+const maximus = require("./members/maximus.js");
 
 //members route
 router.get('/members.html',  (req, res) => {
@@ -10,10 +11,7 @@ router.get('/members.html',  (req, res) => {
 
 });
 
-
-
-//loop through the members folder and add the routes for the folder
-
+//use the route here
 router.use('/maximus', maximus);//tmp
 
 

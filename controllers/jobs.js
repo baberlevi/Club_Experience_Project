@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const jobModel = require("../models/jobModel.js");
 
-//job route
+//job list
 router.get('/jobs.html', (req, res) => {
   
     jobModel.find({status: 1}, (err, data) => {
@@ -14,6 +14,7 @@ router.get('/jobs.html', (req, res) => {
 
 });
 
+//add jobs
 router.get('/newJob.html', (req, res) => {
     res.render("newJob");
 });
