@@ -2,7 +2,7 @@
 <htmL>
 
 <head>
-    <title>Web Development Club | Get Points</title>
+    <title>Web Development Club | Dashboard</title>
 </head>
 
 <body>
@@ -15,14 +15,10 @@
     <br>
     <br>
     <br>
-    <h3>Add Points</h3>
-    <form method="POST" action="/api/getPoints">
+    <h3>Dashboard Page</h3>
 
-        <input name="name" type="text" required>
-        <input name="points" type="num" required>
-        <button type="submit">Submit</button>
+    
 
-    </form>
 </body>
 
 </htmL>

@@ -11,7 +11,8 @@ const ROUTE_index = require("./controllers/index.js");
 const ROUTE_jobs = require("./controllers/jobs.js");
 const ROUTE_points = require("./controllers/points.js");
 const ROUTE_about = require("./controllers/about.js");
-const ROUTE_members = require("./controllers/members.js");
+const ROUTE_members = require("./controllers/members/members.js");
+const ROUTE_user = require("./controllers/user/user.js");
 
 //include api routes
 const API_index = require('./controllers/api/index.js');
@@ -31,7 +32,8 @@ router.use('/', ROUTE_index);
 router.use('/', ROUTE_jobs);
 router.use('/', ROUTE_points);
 router.use('/', ROUTE_about);
-router.use('/', ROUTE_members);
+router.use('/user', ROUTE_user);
+router.use('/members', ROUTE_members);
 
 //api routes
 router.use('/api', API_index);
