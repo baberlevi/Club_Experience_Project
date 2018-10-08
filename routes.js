@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
+//middleware
+const validation = require("./services/validation.js");
 
 //config settings
 const config = require('./config.js');
@@ -24,9 +28,11 @@ const APIS_User = require("./controllers/api/user/register.js");
 mongoose.connect(config.dbUrl, {useNewUrlParser: true});
 
 //middleware
+router.use(cookieParser());
 router.use(express.static('/public'));
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
+router.use(validation);//authentication
 
 //document routes
 router.use('/', ROUTE_index);
@@ -44,7 +50,7 @@ router.use('/api/user',APIS_User);
 
 //respond with a 404 api request if nothing was found
 router.use('/api', (req,res) => {
-
+    
     res.status(404);
     res.json({"error":"Bad request!"});
 

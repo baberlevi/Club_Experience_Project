@@ -17,7 +17,10 @@
     <br>
     <h3>Register Page</h3>
 
+    @model.err
+
     <form action="/api/user/register" method="POST">
+        
         <label>First Name: </label>
         <input name="firstName" autocomplete="given-name" type="text" required>
 

@@ -5,31 +5,42 @@ const Hash = require("../../../lib/Hash.js");
 //models
 const UserModel = require("../../../models/userModel.js");
 
-//members route
+//user api source
+const login = require("./login.js");
+const logout = require("./logout.js");
+
+//register api
 api.post('/register',  (req, res) => {
 
     //check if passwords match
-    if(req.body.password == req.body.passwordCheck){
+    if(req.body.password == req.body.passwordCheck && req.body.password.length > 8 && req.body.password.length < 55){
         req.body.password = Hash.hashString(req.body.password);
     }else {
         req.body.password = null;
     }
-    //check for duplicate emails
-    //user.find()
 
-    let user = new UserModel(req.body);
-    
-    user.save((err) => {
-        if (err) {
-            res.json({
-                "userCreated": false,
-                "err":err
-            });
-        }else{
-            res.json({"userCreated": true});
+    UserModel.find({email: req.body.email},(err, result) => {//check for duplicate user
+        
+        if(result.length > 0){
+            req.body.email = null;
         }
-    });
 
+        let user = new UserModel(req.body);
+        console.log(res.err);
+        user.save((err) => {
+            if (err) {
+                
+                res.redirect("/user/register.html");
+            }else{
+                res.redirect("/user/login.html");
+            }
+        });
+        
+    });
 });
+
+
+api.use('/', login);
+api.use('/', logout);
 
 module.exports = api;

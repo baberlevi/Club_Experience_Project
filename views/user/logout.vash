@@ -2,7 +2,7 @@
 <htmL>
 
 <head>
-    <title>Web Development Club | Get Points</title>
+    <title>Web Development Club | Logout</title>
 </head>
 
 <body>
@@ -12,18 +12,16 @@
     <a href="/jobs.html">Jobs</a>
     <a href="/points.html">Points</a>
     <a href="/about.html">About</a>
-    <a href="/user/logout.html">Logout</a>
     <br>
     <br>
     <br>
-    <h3>Add Points</h3>
-    <form method="POST" action="/api/getPoints">
+    <h3>Logout Page</h3>
 
-        <input name="name" type="text" required>
-        <input name="points" type="num" required>
-        <button type="submit">Submit</button>
-
+        <a href="/api/user/logout">Logout</a>
+        
     </form>
+    
+
 </body>
 
 </htmL>

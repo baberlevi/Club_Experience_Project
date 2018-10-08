@@ -26,8 +26,6 @@ const userModel = new Schema({
     },
     password: {
         type: String,
-        min: 9,
-        max: 30,
         required: true
     },
     points: {
@@ -37,6 +35,9 @@ const userModel = new Schema({
     createdOn: {
         type: Date,
         default: Date.now()
+    },
+    role: {
+        type: String
     }
 });
 

@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.1",
+    "cookie-parser": "^1.4.3",
     "express": "*",
     "ip": "*",
+    "jsonwebtoken": "^8.3.0",
     "mongodb": "*",
     "mongoose": "*",
     "nodemon": "*",
