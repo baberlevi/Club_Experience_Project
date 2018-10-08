@@ -3,6 +3,7 @@ const router = express.Router();
 
 //add your pages route here
 const maximus = require("./maximus.js");
+const mason = require("./mason.js");
 
 //members route
 router.get('/members.html',  (req, res) => {
@@ -13,6 +14,7 @@ router.get('/members.html',  (req, res) => {
 
 //use the route here
 router.use('/maximus', maximus);//tmp
+router.use('/mason', mason);
 
 
 module.exports = router;

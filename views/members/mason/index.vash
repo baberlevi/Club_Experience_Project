@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Web Development Club | Members</title>
+        <title>Mason Timmerman</title>
     </head>
     <body>
         <h1>Web Development Club</h1>
         <a href="/index.html">Home</a>
-        <a href="/members.html">Members</a>
+        <a href="/members/members.html">Members</a>
         <a href="/jobs.html">Jobs</a>
         <a href="/points.html">Points</a>
         <a href="/about.html">About</a>
         <br>
         <br>
         <br>
-        <h3>Members</h3>
-
-        <a href="./maximus/index.html">Maxwell DeVos</a>
-        <a href="./mason/index.html">Mason Timmerman</a>
-
+        <h3>Mason Timmerman</h3>
+        <p>Welcome to my page!!</p>
     </body>
 </html>
