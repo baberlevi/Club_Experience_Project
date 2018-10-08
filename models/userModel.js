@@ -6,13 +6,13 @@ const Schema = mongoose.Schema;
 
 //new user schema
 const userModel = new Schema({
-    firstname: {
+    firstName: {
         type: String,
         min: 2,
         max: 30,
         required: true
     },
-    lastname: {
+    lastName: {
         type: String,
         min: 2,
         max: 30,
@@ -24,9 +24,19 @@ const userModel = new Schema({
         max: 20,
         required: true
     },
+    password: {
+        type: String,
+        min: 9,
+        max: 30,
+        required: true
+    },
     points: {
         type: Number,
-        default: 1
+        default: 0
+    },
+    createdOn: {
+        type: Date,
+        default: Date.now()
     }
 });
 
