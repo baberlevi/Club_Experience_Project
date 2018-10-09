@@ -1,0 +1,17 @@
+    @html.extend('_layout/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        @{
+            model.title = "404";
+        }
+            
+        <h3>404 Page</h3>
+        <p>The requested page was not found!</p>
+        
+
+    })
+
+})
+
+

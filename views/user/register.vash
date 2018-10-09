@@ -1,47 +1,36 @@
-<!DOCTYPE html>
-<htmL>
+@html.extend('_layout/_layout', function(model){
 
-<head>
-    <title>Web Development Club | Register</title>
-</head>
+    @html.block('content', function(model){
 
-<body>
-    <h1>Web Development Club</h1>
-    <a href="/index.html">Home</a>
-    <a href="/members/members.html">Members</a>
-    <a href="/jobs.html">Jobs</a>
-    <a href="/points.html">Points</a>
-    <a href="/about.html">About</a>
-    <br>
-    <br>
-    <br>
-    <h3>Register Page</h3>
+        @{
+            model.title = "Register";
+        }
+      
+        <h3>Register Page</h3>
 
-    @model.err
+        @model.err
 
-    <form action="/api/user/register" method="POST">
-        
-        <label>First Name: </label>
-        <input name="firstName" autocomplete="given-name" type="text" required>
+        <form action="/api/user/register" method="POST">
+            
+            <label>First Name: </label>
+            <input name="firstName" autocomplete="given-name" type="text" required>
 
-        <label>Last Name: </label>
-        <input name="lastName" autocomplete="family-name" type="text" required>
+            <label>Last Name: </label>
+            <input name="lastName" autocomplete="family-name" type="text" required>
 
-        <label>Email: </label>
-        <input name="email" autocomplete="email" type="email" required>
+            <label>Email: </label>
+            <input name="email" autocomplete="email" type="email" required>
 
-        <label>Password: </label>
-        <input name="password" autocomplete="new-password" type="password" required>
+            <label>Password: </label>
+            <input name="password" autocomplete="new-password" type="password" required>
 
-        <label>Repeat Password: </label>
-        <input name="passwordCheck" autocomplete="new-password" type="password" required>
+            <label>Repeat Password: </label>
+            <input name="passwordCheck" autocomplete="new-password" type="password" required>
 
-        <input type="submit" value="submit" required>
+            <input type="submit" value="submit" required>
 
-    </form>
+        </form>
 
+    })
 
-
-</body>
-
-</htmL>
+})

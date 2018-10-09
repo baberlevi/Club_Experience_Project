@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<htmL>
+@html.extend('_layout/_layout', function(model){
 
-<head>
-    <title>Web Development Club | Logout</title>
-</head>
+    @html.block('content', function(model){
 
-<body>
-    <h1>Web Development Club</h1>
-    <a href="/index.html">Home</a>
-    <a href="/members/members.html">Members</a>
-    <a href="/jobs.html">Jobs</a>
-    <a href="/points.html">Points</a>
-    <a href="/about.html">About</a>
-    <br>
-    <br>
-    <br>
-    <h3>Logout Page</h3>
+        @{
+            model.title = "Logout";
+        }
+      
+        <h3>Logout Page</h3>
 
         <a href="/api/user/logout">Logout</a>
-        
-    </form>
-    
+            
 
-</body>
+    })
 
-</htmL>
+})
+

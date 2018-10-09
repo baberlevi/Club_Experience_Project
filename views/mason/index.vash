@@ -1,0 +1,18 @@
+@html.extend('_layout/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        @{
+            model.title = "Mason Timmerman";
+        }
+        
+        <h3>Mason Timmerman</h3>
+        <p>I made a page for an extra example!<br>
+            Also, I'm pretty pumped for this project</p>
+
+    })
+
+})
+
+
+

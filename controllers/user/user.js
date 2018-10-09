@@ -10,7 +10,7 @@ const logout = require("./logout.js");
 //dashboard route
 router.get('/user.html',  (req, res) => {
 
-    res.render("user/user"); 
+    res.render("user/user", req.decoded); 
 
 });
 

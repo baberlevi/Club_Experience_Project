@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Points = require("../models/pointsModel.js");
+const Points = require("../../models/pointsModel.js");
 
 //points list
 router.get('/points.html', (req, res) => {
@@ -8,8 +8,10 @@ router.get('/points.html', (req, res) => {
     if(req.decoded.auth){
         Points.find((err,data) => {
             if (err) throw err;
-    
-            res.render("points", { points: data });
+
+            req.decoded.points = data;
+            
+            res.render("home/points", req.decoded);
         });
     }else{
         res.redirect("/user/login.html");
@@ -22,7 +24,7 @@ router.get('/points.html', (req, res) => {
 router.get('/getPoints.html', (req,res) => {
 
     if(req.decoded.auth){
-        res.render("getPoints");
+        res.render("home/getPoints");
     }else{
         res.redirect("/user/login.html");
     }

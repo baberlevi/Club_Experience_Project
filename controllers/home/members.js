@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 //members route
-router.get('/register.html',  (req, res) => {
+router.get('/members.html',  (req, res) => {
 
-    res.render("user/register", req.decoded); 
+    res.render("home/members", req.decoded); 
 
 });
 

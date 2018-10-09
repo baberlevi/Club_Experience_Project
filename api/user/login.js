@@ -1,8 +1,8 @@
 const express = require('express');
 const login = express.Router();
-const loginModel = require("../../../models/userModel.js");
-const Token = require("../../../lib/Token");
-const Hash = require("../../../lib/Hash.js");
+const loginModel = require("../../models/userModel.js");
+const Token = require("../../lib/Token");
+const Hash = require("../../lib/Hash.js");
 
 //for a login
 login.post('/login', (req, res) => {

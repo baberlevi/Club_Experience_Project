@@ -4,7 +4,7 @@ const router = express.Router();
 //Maxwell DeVos routes
 router.get('/index.html',  (req, res) => {
 
-    res.render("./members/maximus/index"); 
+    res.render("./maximus/index", req.decoded); 
 
 });
 

@@ -3,11 +3,13 @@
     @html.block('content', function(model){
 
         @{
-            model.title = "Email Verification";
+            model.title = "Maxwell DeVos";
         }
-      
-        <h3>Verify Email</h3>
+        
+        <h3>Maxwell DeVos</h3>
+        <p>Welcome to my page!!</p>
 
     })
 
 })
+

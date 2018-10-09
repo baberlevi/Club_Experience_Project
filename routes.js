@@ -11,18 +11,15 @@ const validation = require("./services/validation.js");
 const config = require('./config.js');
 
 //include document routes
-const ROUTE_index = require("./controllers/index.js");
-const ROUTE_jobs = require("./controllers/jobs.js");
-const ROUTE_points = require("./controllers/points.js");
-const ROUTE_about = require("./controllers/about.js");
-const ROUTES_members = require("./controllers/members/members.js");
+const ROUTES_home = require("./controllers/home/index.js");
 const ROUTES_user = require("./controllers/user/user.js");
+const ROUTES_maximus = require("./controllers/members/maximus.js");
+const ROUTES_mason = require("./controllers/members/mason.js");
 
 //include api routes
-const API_index = require('./controllers/api/index.js');
-const API_newJob = require("./controllers/api/newJob.js");
-const API_getPoints = require("./controllers/api/getPoints.js");
-const APIS_User = require("./controllers/api/user/register.js");
+const API_index = require('./api/home/index.js');
+const APIS_job = require("./api/jobs/newJob.js");
+const APIS_User = require("./api/user/register.js");
 
 //connect to the database using Mongoose
 mongoose.connect(config.dbUrl, {useNewUrlParser: true});
@@ -32,20 +29,17 @@ router.use(cookieParser());
 router.use(express.static('/public'));
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
-router.use(validation);//authentication
+router.use(validation);
 
 //document routes
-router.use('/', ROUTE_index);
-router.use('/', ROUTE_jobs);
-router.use('/', ROUTE_points);
-router.use('/', ROUTE_about);
+router.use('/', ROUTES_home);
 router.use('/user', ROUTES_user);
-router.use('/members', ROUTES_members);
+router.use('/maximus', ROUTES_maximus);
+router.use('/mason', ROUTES_mason);
 
 //api routes
 router.use('/api', API_index);
-router.use('/api', API_newJob);
-router.use('/api', API_getPoints);
+router.use('/api/job', APIS_job);
 router.use('/api/user',APIS_User);
 
 //respond with a 404 api request if nothing was found
@@ -60,7 +54,7 @@ router.use('/api', (req,res) => {
 router.use('/', (req,res) => {
 
     res.status(404);
-    res.render("404");
+    res.render("status/404", req.decoded);
 
 });
 

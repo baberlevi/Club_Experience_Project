@@ -1,0 +1,19 @@
+@html.extend('_layout/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        @{
+            model.title = "Members";
+        }
+         
+        <h3>Members Page</h3>
+
+        <a href="/maximus/index.html">Maxwell DeVos</a>
+        <br>
+        <a href="/mason/index.html">Mason Timmerman</a>
+
+    })
+
+})
+        
+

@@ -4,7 +4,7 @@ const router = express.Router();
 //about route
 router.get('/about.html', (req, res) => {
 
-    res.render("about");
+    res.render("home/about", req.decoded);
 
 });
 

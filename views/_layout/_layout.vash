@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>@model.title | Web Development Club</title>
+	</head>
+	<body>
+        <header>
+             <h1>Web Development Club</h1>
+			<a href="/index.html">Home</a>
+			<a href="/members.html">Members</a>
+			<a href="/jobs.html">Jobs</a>
+			<a href="/points.html">Points</a>
+			<a href="/about.html">About</a>
+			@if(model.auth){
+				<a href="/user/user.html">@model.userEmail</a>
+				<span> | </span>
+				<a href="/api/user/logout">Logout</a>
+			}else{
+				<a href="/user/login.html">Login </a> 
+				<span> | </span>
+				<a href="/user/register.html">Register</a>
+			}
+			
+
+        </header>
+    
+		@html.block('content')
+
+		<footer>
+			<p>Copyright 2018 Web Development Club</p>			
+		</footer>
+	</body>
+</html>

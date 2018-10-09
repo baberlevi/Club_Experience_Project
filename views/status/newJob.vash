@@ -1,0 +1,23 @@
+@html.extend('_layout/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        @{
+            model.title = "New Job";
+        }
+      
+        <h3>New Job</h3>
+        <form method="POST" action="/api/newJob">
+
+            <input name="name" type="text" required>
+            <textarea name="description">
+
+            </textarea>
+            <input name="points" type="num" required>
+            <button type="submit">Submit</button>
+
+        </form>
+
+    })
+
+})

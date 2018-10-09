@@ -1,9 +1,9 @@
 const express = require('express');
 const api = express.Router();
-const Hash = require("../../../lib/Hash.js");
+const Hash = require("../../lib/Hash.js");
 
 //models
-const UserModel = require("../../../models/userModel.js");
+const UserModel = require("../../models/userModel.js");
 
 //user api source
 const login = require("./login.js");

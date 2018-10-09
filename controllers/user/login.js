@@ -4,7 +4,7 @@ const router = express.Router();
 //login route
 router.get('/login.html',  (req, res) => {
 
-    res.render("user/login"); 
+    res.render("user/login", req.decoded); 
 
 });
 

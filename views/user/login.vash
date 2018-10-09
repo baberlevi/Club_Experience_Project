@@ -1,35 +1,27 @@
-<!DOCTYPE html>
-<htmL>
+@html.extend('_layout/_layout', function(model){
 
-<head>
-    <title>Web Development Club | Login</title>
-</head>
+    @html.block('content', function(model){
 
-<body>
-    <h1>Web Development Club</h1>
-    <a href="/index.html">Home</a>
-    <a href="/members/members.html">Members</a>
-    <a href="/jobs.html">Jobs</a>
-    <a href="/points.html">Points</a>
-    <a href="/about.html">About</a>
-    <br>
-    <br>
-    <br>
-    <h3>Login Page</h3>
+        @{
+            model.title = "Login";
+        }
+      
+        <h3>Login Page</h3>
 
-    <form method="POST" action="/api/user/login">
+        <form method="POST" action="/api/user/login">
 
-        <label>Email: </label>
-        <input name="email" type="text" autocomplete="email" required>
-        <label>Password: </label>
-        <input name="password" type="password" autocomplete="password" required>
-        
-        <input type="submit" value="submit">
-        <br>
-        <a href="/user/register.html">Register</a>
-    </form>
+            <label>Email: </label>
+            <input name="email" type="text" autocomplete="email" required>
+            <label>Password: </label>
+            <input name="password" type="password" autocomplete="password" required>
+            
+            <input type="submit" value="submit">
+            <br>
+            <a href="/user/register.html">Register</a> | 
+            <a href="/user/password.html">Forgot Password</a>
+        </form>
+
+    })
+
+})
     
-
-</body>
-
-</htmL>

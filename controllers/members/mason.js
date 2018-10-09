@@ -4,7 +4,7 @@ const router = express.Router();
 //Mason Timmerman routes
 router.get('/index.html', (req, res) => {
 
-    res.render("./members/mason/index");
+    res.render("./mason/index", req.decoded);
 
 });
 
