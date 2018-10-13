@@ -1,6 +1,6 @@
 const express = require('express');
 const login = express.Router();
-const loginModel = require("../../models/userModel.js");
+const loginModel = require("../../models/account/userModel.js");
 const Token = require("../../lib/Token");
 const Hash = require("../../lib/Hash.js");
 
@@ -19,23 +19,35 @@ login.post('/login', (req, res) => {
                 let payload = {
                     auth: true,
                     ip: req.ip,
-                    key: "some hashed key in the future",
                     userEmail: subEmail,
-                    exp: (Math.floor(Date.now() / 1000) + 60) * 24
+                    exp: (Math.floor(Date.now() / 1000) + 60) + 24//change this to 30 mins
                 };
 
-                res.cookie("token", Token.tokenGen(payload), {
-                    maxAge: 1000 * 60 * 60 * 24,
-                    httpOnly: true
-                });
+                let token = Token.tokenGen(payload)
 
-                res.redirect("/user/user.html");
+                console.log(token);
+
+                if(!token){
+
+                    res.redirect("/user/login.html");
+                    
+                }else{
+
+                    res.cookie("token", token, {
+                        maxAge: 1000 * 60 * 60 * 24,
+                        httpOnly: true
+                    });
+    
+                    //success
+                    res.redirect("/user/user.html");
+                }
 
             }else{
                 res.redirect("/user/login.html");
             }
+            
         } else{
-          res.redirect("/user/login.html");  
+            res.redirect("/user/login.html");  
         }
     });
 });

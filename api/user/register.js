@@ -3,7 +3,7 @@ const api = express.Router();
 const Hash = require("../../lib/Hash.js");
 
 //models
-const UserModel = require("../../models/userModel.js");
+const UserModel = require("../../models/account/userModel.js");
 
 //user api source
 const login = require("./login.js");
@@ -26,10 +26,11 @@ api.post('/register',  (req, res) => {
         }
 
         let user = new UserModel(req.body);
-        console.log(res.err);
+
+        // console.log(res.err);
+        //save new user here
         user.save((err) => {
             if (err) {
-                
                 res.redirect("/user/register.html");
             }else{
                 res.redirect("/user/login.html");
